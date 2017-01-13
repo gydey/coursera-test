@@ -83,9 +83,88 @@ body {
 }
 /* END HEADER */
 
+/* FOOTER */
+.panel-footer {
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #222;
+  border-top: 0;
+}
+.panel-footer div.row {
+  margin-bottom: 35px;
+}
+#hours, #address {
+  line-height: 2;
+}
+#hours > span, #address > span {
+  font-size: 1.3em;
+}
+#address p {
+  color: #557c3e;
+  font-size: .8em;
+  line-height: 1.8;
+}
+#testimonials {
+  font-style: italic;
+}
+#testimonials p:nth-child(2) {/* Select the second <p>*/
+  margin-top: 25px;
+}
+
+/* END FOOTER */
+
+/* HOME PAGE */
+/* Jumbotron */
+.container .jumbotron {
+  box-shadow: 0 0 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+}
+/* End Jumbotron */
+/* Navigation Tiles */
+#menu-tile, #specials-tile, #map-tile {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative; /* Set an anchor for the <span> label(position:absolute) */
+  border: 2px solid #3f0c1f;
+  overflow: hidden;/* Hide both scrollbars*/
+}
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+#menu-tile {
+  background: url('../images/menu-tile.jpg') no-repeat;
+  background-position: center;
+}
+#specials-tile {
+  background: url('../images/specials-tile.jpg') no-repeat;
+  background-position: center;
+}
+#menu-tile span, #specials-tile span, #map-tile span {
+  position: absolute; /* Element positioned absolutely within it's container(#menu-tile)*/
+  bottom: 0; /* 0px from the bottom*/
+  right: 0; /* 0px from the bottom*/
+  width: 100%; /*60% of the container*/
+  text-align: center;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  background-color: #000000;
+  color: #ffffff;
+  opacity: .8;
+}
+
+/* End Navigation Tiles */
+/* END HOME PAGE */
+
 /********** Large devices only **********/
 @media (min-width: 1200px) {
-
+  /* Home Page */
+  .container .jumbotron {
+    height: 797px;
+    background: url('../images/jumbotron_1200.png') no-repeat;
+  }
+  /* End Home Page */
 }
 
 /********** Medium devices only **********/
@@ -98,11 +177,25 @@ body {
     margin: 5px 5px 5px 0;
   }
   /* End Header */
+
+  /* Home Page */
+  /* Jumbotorn */
+  .container .jumbotron {
+    height: 659px;
+    background: url('../images/jumbotron_992.png') no-repeat;
+  }
+  /* End Jumbotorn */
+  /* End Home Page */
 }
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
-
+  /* Home Page */
+  .container .jumbotron {
+    height: 510px;
+    background: url('../images/jumbotron_768.png') no-repeat;
+  }
+  /* End Home Page */
 }
 
 /********** Extra small devices only **********/
@@ -123,12 +216,69 @@ body {
   .navbar-brand p img {/* Star-K */
     height: 20px;
   }
+  #collapsable-nav a {/* Collapsed nav menu glyph */
+    font-size: 1.2em;
+  }
+  #collapsable-nav a span {
+    font-size: 1em;
+    margin-right: 5px;
+  }
+
+  #call-btn > a {
+    font-size: 1.5em;
+    display: block;
+    margin: 0 20px;
+    padding: 10px;
+    border: 2px solid #fff;
+    background-color: #f6b319;
+    color: #951c49;
+  }
+  #xs-deliver {
+    margin-top: 5px;
+    font-size: .7em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  /* End Header */
+
+  /* Footer */
+  .panel-footer section {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .panel-footer section:nth-child(3) {/* Select the third section */
+    margin-bottom: 0; /*Set to 0 because the margin already exist on the whole row */
+  }
+  .panel-footer section hr {
+    width: 50%; /* 50% wide of the screen */
+  }
+  /* End Footer */
+
+  /* Home Page */
+  .container .jumbotron {
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  #menu-tile, #specials-tile {
+    width: 360px;
+    margin: 0 auto 15px;
+  }
+  /* End Home Page */
 }
 
-#collapsable-nav a {/* Collapsed nav menu glyph */
-  font-size: 1.2em;
-}
-#collapsable-nav a span {
-  font-size: 1em;
-  margin-right: 5px;
-}
+/********** Super Extra small devices only (e.g., iPhone4) **********/
+  @media (max-width: 479px) {
+    /* Header */
+    .navbar-header h1 {
+      padding-top: 5px;
+      font-size: 6vw; /* 6 viewport width */
+    }
+    /* End Header */
+    /* Home Page */
+    #menu-tile, #specials-tile {
+      width: 280px;
+      margin: 0 auto 15px;
+    }
+    /* End Home Page */
+  }
