@@ -12,11 +12,11 @@ body {
 #header-nav {
   background-color: #1f2041;
   border-radius: 0;
-  border-top: none;
-  border-left: none;
-  border-right: none;
   border-bottom: 2px solid #e7e6f7;
-  margin-bottom: 0;
+}
+
+#main-content {
+    margin-top: 110px;
 }
 
 #title {
@@ -63,16 +63,13 @@ body {
 }
 
 #row {
-  /*width: 94%;*/
+  width: 100%;
 }
 
-.container {
-  width: 100%;
-  padding: 50px;
-}
 .menu-section {
   background-color: #e7e6f7;
   opacity: 0.8;
+  margin: 50px;
 }
 .menu-section .menu-title {
   font-size: 1.2em;
