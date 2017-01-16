@@ -73,6 +73,8 @@ body {
 .menu-section {
   background-color: #e7e6f7;
   opacity: 0.8;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .menu-section .menu-title {
   font-size: 1.2em;
