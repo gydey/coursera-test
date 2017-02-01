@@ -116,23 +116,50 @@
 
 
 
-// *** Lecture 57 - AJAX - Part 3 - ***
+// // *** Lecture 57 - AJAX - Part 3 - ***
+// // Event handling
+// document.addEventListener("DOMContentLoaded",
+//   function (event) {
+//     //Unobstrusive event binding
+//     document.querySelector("button").addEventListener("click", function () {
+//       //Call server to get the name
+//       $ajaxUtils.sendGetRequest("data/name.txt",
+//         function (request) {
+//           var name = request.responseText;
+//           console.log(name);
+//           document.querySelector("#content").innerHTML = "<h2>Hello " + name +"!</h2>";
+//         });
+//     });
+//   }
+// );
+
+// *** Lecture 58 - JSON - Part 3 - ***
 // Event handling
 document.addEventListener("DOMContentLoaded",
   function (event) {
     //Unobstrusive event binding
     document.querySelector("button").addEventListener("click", function () {
+
       //Call server to get the name
-      $ajaxUtils.sendGetRequest("data/name.txt",
-        function (request) {
-          var name = request.responseText;
-          console.log(name);
-          document.querySelector("#content").innerHTML = "<h2>Hello" + name +"!</h2>";
+      $ajaxUtils.sendGetRequest("/data/name.json",
+        function (res) {
+          var message = res.firstName + " " + res.lastName;
+          if (res.likesChineseFood) {
+            message += " likes Chinese food";
+          }
+          else {
+            message += " doesn't like Chinese food"
+          }
+          console.log(message);
+          message += " and uses ";
+          message += res.numberOfDisplays + 1;
+          message += " displays for coding.";
+
+          document.querySelector("#content").innerHTML = "<h2>" + message + "</h2>"
         });
     });
   }
 );
-
 
 
 
